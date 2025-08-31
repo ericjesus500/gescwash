@@ -1,0 +1,133 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background: #faf9f5;
+	min-height: 100vh;
+	display: flex;
+}
+
+.main{
+	widt: 100%;
+	margin: 0 auto;
+	background: #faf9f5;
+}
+
+/*Estilos del nav del header */
+
+.nav-header{
+	background: #1a1a2e;
+}
+
+.nav-header a{
+	color: #4cc9f0;
+}
+
+.nav-header a:hover{
+	color: #d0f1fb;
+}
+
+/* Estilos del Contenido */
+
+.content {
+	width: 100%;
+	margin: 0 auto;
+	flex: 1;
+	background: #faf9f5;
+}
+
+.content-header {
+	margin-block: 30px;
+}
+
+.content-header h1 {
+	color: #1a1a2e;
+	font-size: 28px;
+	margin-bottom: 10px;
+}
+
+.content-header p {
+	color: #666;
+	font-size: 16px;
+}
+
+/*Estilos del Admin Form*/
+.container-form-regadmin{
+	background: white;
+	/*background-color: #faf9f5;*/
+	width: 100%;
+	padding: 30px; 
+	border-radius: 12px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	margin: 40px auto;
+}
+
+.container-form-regadmin form{
+	color: #1a1a2e;
+}
+
+.container-form-regadmin form label {
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.container-form-regadmin form input, .container-form-regadmin form select {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #1a1a2e;
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+.container-form-regadmin form input:focus, .container-form-regadmin form select:focus {
+  outline: none;
+  background-color: #333;
+  border-bottom: 2px solid #00ffaf;
+}
+
+.container-form-regadmin form button {
+  background-color: #1a1a2e;
+  color: white;
+  margin-top: 30px;
+  padding: 15px;  
+  font-weight: bold;  
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.container-form-regadmin form button:hover {
+  background-color: #35355f;
+  color: ##808080;
+}
+
+/*Clases de Google Material Icons */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/css/fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+

@@ -1,0 +1,40 @@
+Requerimientos:
+PUNTO 1. La tabla usuarios debe considerarse renombrada a usuario y la tabla tipos_identificacion por tipo_identificacion (en singular)
+PUNTO 2. Los datos;
+$_SESSION['licencia_valida'] = true;
+$_SESSION['clave_activacion'] = $clave_input;
+$_SESSION['datos_licencia'] = $claveData;
+deben ser generados al momento de validar la Licencia, o sea en validarClave() de tal forma que sirva de confirmación en registrarAdmin(). En ese contexto registrarAdmin() debe confirmar que $_SESSION['clave_activacion'] le llega efectivamente por el método POST y a partir de aqui iniciar el proceso de registro del admin fundador.
+
+PUNTO 3. Las siguientes tablas ya creadas llevarán datos pre-cargados (lo mismo que la tabla claves_licencia)
+CREATE TABLE tipo_identificacion (
+  tipo_ident_id INT AUTO_INCREMENT PRIMARY KEY,
+  tipo_ident_nombre VARCHAR(50) NOT NULL,
+  tipo_ident_abreviatura VARCHAR(10) NOT NULL,
+  tipo_ident_descripcion TEXT NULL DEFAULT NULL
+)Engine=InnoDB;
+Valores precargados: 1. 'DNI', 2. 'RUC', 3.'PASAPORTE'
+
+CREATE TABLE tipo_usuario (
+  tipo_usuario_id INT AUTO_INCREMENT PRIMARY KEY,
+  tipo_usuario_nombre VARCHAR(50) NOT NULL,
+  tipo_usuario_descripcion TEXT NULL DEFAULT NULL
+)Engine=InnoDB;
+Valores precargados: 1.'Empleado', 2.'Cliente', 3.'Proveedor', 4.'Transportista'
+
+CREATE TABLE rol_empleado (
+  rol_id INT AUTO_INCREMENT PRIMARY KEY,
+  rol_nombre VARCHAR(50) NOT NULL,      
+  rol_descripcion TEXT NULL DEFAULT NULL
+)Engine=InnoDB;
+Valores precargados: 1.'Gerente General', 2. 'Gerente Comercial', 3.'Administrador', 4.'Vendedor', 5.'Cobrador', 6.Administrador de Software, Considerando estas decisiones al registrar al admin fundador su tipo de usuario seguirá siendo id=>1, pero su valor será = 'Empleado'. Aqui no hay que hacer correción ya que el admin activador o fundador tecnicamente es un empleado. La correción será en el registro como usuario ya que su rol será = 7 (valor pre cargado en la tabla rol_empleado); esto ya fue corregido manualmente.
+7.Admin. Activador de Software.
+
+PUNTO 4. Para la seccion de sesiones en registrarAdmin() debo precisar lo siguiente: Ya que la sesión persistirá hasta hacer un logout es importante mantener su valor real a través de todo la duración de la misma, por eso el valor del rol NO debe ser 'Fundador' sino el que realmente le corresponda al admin fundador. Ya que al momento del registro solo se considero el valor del indice(valor numerico = 7) es necesario acceder a la tabla rol_empleado y extraer el valor del nombre que le corresponde a dicho indice. De esta manera $_SESSION['Auth'] tendrá valores reales lo que permitirá hacer comparaciones con resultados que nos de un HelperSesions en el que nos apoyaremos para verificar una ssesion válida. Estoy en lo correcto sino por favor corrígeme.
+
+PUNTO 5. Si bien es cierto que habrán tablas con datos precargados debo considerar importante verificar que realmente estas tablas tengan datos precargados para ello nos apoyaremos en un SeederHelper::poblarSiNecesario() que haga esta lógica al inicio del registro.
+
+PUNTO 6. En RespaldoHelper::generarRespaldoAdmin(array $datos, string $carpeta = '../storage/') el array $datos debe contener todos los datos del admin fundador. Actualmente solo hemos considerado unos cuantos. Refactorizar este punto por favor. He considerado la creación de este helper RespaldoHelper porque tendrá más métodos que me permitirán respaldar data que se vaya generando en el futuro.
+El respaldo que se genere debe ser descargable en formato zip y debe retornar la ruta+nombre_archivo donde se guardó por ejemplo: gescwash/storage/respaldo.zip de tal forma que en registrarAdmin() debe evaluarse que efectivamente la ruta exista y si no existe debe mostrar un mensaje de aviso del error al generarlo. Si la ruta existe también debe mostrar un aviso y ya que el sistema tendrá un módulo de Respaldos considero prudente crear  $_SESSION['descarga_zip'] = $respaldoDatos;
+
+PUNTO 7. Redirigirnos a la vista respaldo_confirmación el mismo que debe la info del respaldo creado y mostrar opciones para descargar el archivo, enviarlo por email(sin logica, será para más adelante) y redirigir al dashboard; y con esto, si todo va bien, cerramos nuestro proceso de activación de GESCWASH.

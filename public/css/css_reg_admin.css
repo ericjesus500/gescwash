@@ -1,0 +1,81 @@
+.content-body {
+  width: 100vw;
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.container-reg-admin {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #1E1E1E;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 170, 0.1);
+}
+
+.container-reg-admin h2 {
+  text-align: center;
+  color: #00ffaf;
+}
+
+.container-reg-admin form {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-reg-admin form label {
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.container-reg-admin form input, .container-reg-admin form select {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: #2A2A2A;
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+.container-reg-admin form input:focus, .container-reg-admin form select:focus {
+  outline: none;
+  background-color: #333;
+  border-bottom: 2px solid #00ffaf;
+}
+
+.container-reg-admin form button {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #00ffaf;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.container-reg-admin form button:hover {
+  background-color: #00d499;
+}
+
+/* ⚙️ Estilo para las opciones del select en modo oscuro */
+.checkmark {
+  position: absolute;
+  right: 10px;
+  top: 14px;
+  font-size: 18px;
+  color: var(--valid-color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+	
+@media (max-width: 600px) {
+  .container-reg-admin {
+	margin: 20px;
+	padding: 20px;
+  }
+}
