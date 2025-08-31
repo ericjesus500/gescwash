@@ -9,7 +9,7 @@
 <div class="row"><?php require_once 'header.php';?></div>
 <div class="row">
   <div class="col-md-3 col-sm-12">
-    <?php require_once 'sidebar_ver_2.php'; ?>
+    <?php require_once 'sidebar.php'; ?>
   </div>
   <div class="col-md-9 col-sm-12">
     <div class="contenido-principal">

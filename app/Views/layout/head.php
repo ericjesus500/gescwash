@@ -6,8 +6,7 @@
     <!--<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />-->
 	<link href="/css/roboto_fonts.css" rel="stylesheet" />	
 	<link href="/css/estilos_gen.css" rel="stylesheet" />
-	<!--<link href="/css/sidebar.css" rel="stylesheet" />-->
-	<link href="/css/sidebar_new.css" rel="stylesheet" />
+	<link href="/css/sidebar.css" rel="stylesheet" />
 	<link href="/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="/css/css_reg_admin.css" rel="stylesheet" />
 <title>GESCWASH</title>

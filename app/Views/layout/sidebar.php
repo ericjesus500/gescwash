@@ -10,9 +10,10 @@
         <!-- Home -->
         <div class="menu-item">
             <div class="menu-item-parent">
-                <span>
-                    <i class="material-icons">home</i>
+                <span> 
+                    <i class="material-icons">home</i>                    
                     <span class="icon-title">Home</span>
+                    <span class="tooltiptext">Home</span>
                 </span>
                 <span class="arrow">
                     <i class="material-icons">chevron_right</i>
@@ -43,7 +44,8 @@
             <div class="menu-item-parent">
                 <span>
                     <i class="material-icons">settings</i>
-                    <span class="icon-title">Configuración</span>
+                    <span class="icon-title">Settings</span>
+                    <span class="tooltiptext">Settings</span>
                 </span>
                 <span class="arrow">
                     <i class="material-icons">chevron_right</i>
@@ -71,6 +73,7 @@
                 <span>
                     <i class="material-icons">account_circle</i>
                     <span class="icon-title">Usuarios</span>
+                    <span class="tooltiptext">Usuarios</span>
                 </span>
                 <span class="arrow">
                     <i class="material-icons">chevron_right</i>
@@ -98,6 +101,7 @@
                 <span>
                     <i class="material-icons">inventory</i>
                     <span class="icon-title">Productos</span>
+                    <span class="tooltiptext">Productos</span>
                 </span>
                 <span class="arrow">
                     <i class="material-icons">chevron_right</i>
@@ -129,6 +133,7 @@
                 <span>
                     <i class="material-icons">shopping_cart</i>
                     <span class="icon-title">Compras</span>
+                    <span class="tooltiptext">Compras</span>
                 </span>
                 <span class="arrow">
                     <i class="material-icons">chevron_right</i>
@@ -160,6 +165,7 @@
                 <span>
                     <i class="material-icons">store</i>
                     <span class="icon-title">Ventas</span>
+                    <span class="tooltiptext">Ventas</span>
                 </span>
                 <span class="arrow">
                     <i class="material-icons">chevron_right</i>
@@ -191,6 +197,7 @@
                 <span>
                     <i class="material-icons">warehouse</i>
                     <span class="icon-title">Almacén</span>
+                    <span class="tooltiptext">Almacén</span>
                 </span>
                 <span class="arrow">
                     <i class="material-icons">chevron_right</i>
@@ -222,6 +229,7 @@
                 <span>
                     <i class="material-icons">account_balance_wallet</i>
                     <span class="icon-title">Caja</span>
+                    <span class="tooltiptext">Caja</span>
                 </span>
                 <span class="arrow">
                     <i class="material-icons">chevron_right</i>
@@ -253,6 +261,7 @@
                 <span>
                     <i class="material-icons">report</i>
                     <span class="icon-title">Reportes</span>
+                    <span class="tooltiptext">Reportes</span>
                 </span>
                 <span class="arrow">
                     <i class="material-icons">chevron_right</i>
@@ -273,8 +282,9 @@
         <div class="menu-item">
             <div class="menu-item-parent">
                 <span>
-                    <i class="material-icons">help</i>
-                    <span class="icon-title">Ayuda</span>
+                    <i class="material-icons">help</i>                    
+                    <span class="icon-title">Soporte</span>
+                    <span class="tooltiptext">Soporte</span>
                 </span>
                 <span class="arrow">
                     <i class="material-icons">chevron_right</i>
