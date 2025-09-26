@@ -6,7 +6,7 @@
   <div class="container-reg-admin">
     <h2><span class="material-icons">person_add</span> Registro del Administrador</h2>
 
-    <form action="/activacion/registrar_admin" method="POST">
+    <form action="/activacion/registrarAdmin" method="POST">
 
       <!-- Clave activación validada -->
       <input type="hidden" name="clave_activacion" value="<?= htmlspecialchars($clave_valida) ?>">
